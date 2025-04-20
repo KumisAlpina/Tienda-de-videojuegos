@@ -1,16 +1,15 @@
 class Producto:
-    def __init__(self,nombre: str, precio: float, cantidad: int, estado: str):
+    def __init__(self,nombre: str, precio: float, cantidad: int):
         self.nombre = nombre
         self.precio = precio
         self.cantidad = cantidad
-        self.estado = estado
     
     def __str__(self):
-        return f"Nombre: {self.nombre}, Precio: {self.precio}, Cantidad: {self.cantidad} , Estado: {self.estado}"
+        return f"Nombre: {self.nombre}, Precio: {self.precio}, Cantidad: {self.cantidad}"
     
 class Videojuego(Producto):
-    def __init__(self, nombre: str, precio: float, cantidad: int, genero: str, plataforma: str, estado: str):
-        super().__init__(nombre, precio, cantidad, estado)
+    def __init__(self, nombre: str, precio: float, cantidad: int, genero: str, plataforma: str):
+        super().__init__(nombre, precio, cantidad)
         self.genero = genero
         self.plataforma = plataforma
 
@@ -18,13 +17,13 @@ class Videojuego(Producto):
         return f"{super().__str__()}, Genero: {self.genero}, Plataforma: {self.plataforma}"
     
 class Consola(Producto):
-    def __init__(self, nombre: str, precio: float, cantidad: int, modelo: str, almacenamiento: int, estado: str):
-        super().__init__(nombre, precio, cantidad, estado)
+    def __init__(self, nombre: str, precio: float, cantidad: int, modelo: str, almacenamiento: int):
+        super().__init__(nombre, precio, cantidad)
         self.modelo = modelo
         self.almacenamiento = almacenamiento
 
     def __str__(self):
-        return f"{super().__str__()}, Marca: {self.marca}, Modelo: {self.modelo}"
+        return f"{super().__str__()}, Modelo: {self.modelo}, Almacenamiento: {self.almacenamiento}GB"
 
 class tienda:
     def __init__(self, nombre: str):
